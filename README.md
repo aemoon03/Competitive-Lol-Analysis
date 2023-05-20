@@ -17,14 +17,7 @@ In order to clean the data, we took these following steps:
 2. Filter by relevant leagues: In our analysis, we were mainly only intereseted in major leagues, that being the LCK, LEC, LPL, and LCS. Therefore, any games that were not played in those major regions were filtered out and removed from our dataset. 
 3. Select relevent columns: After filtering out our data, we only need the columns that are relevant to our query. Therefore, only 'result' and 'champion' are required. 
 Our table is as follows: 
-```python
-#Filters out rows where 'champion', filters the columns where 'league' is a major league, and looks only at the 
-#'champion' and 'result' columns
-lol = league.copy()
-filtered = lol['champion'].notna()
-major = lol['league'].apply(lambda x: x == 'LCK' or x == 'LPL' or x== 'LCS' or x == 'LEC')
-lol = lol[filtered & major]
-
+```py
 print(lol[['champion', 'result']].head().to_markdown(index=False))
 ```
 ### Univariate Analysis
@@ -36,14 +29,10 @@ The scatterplot above visualizes the relationship between the "champion" and "wi
 
 ### Interesting Aggregates
 
-```python
-winrates = lol.copy() 
-winrates['Number of Games'] = 1 
-winrates = winrates.groupby('champion').sum() 
-winrates['winrate'] = winrates['result'] / winrates['Number of Games'] 
- 
+```py
 print(winrates.head().to_markdown(index=False))
 ```
+
 Our winrate column is aggregated with the champion, in order to find the amount of games played. This is significant, as our hypothesis question relates to winrates, so we must group by champion in order to find their individual total games played, as well as the total games won in order to calculate the winrate. 
 
 # Assessment of Missingness
