@@ -64,7 +64,7 @@ We tested the missingness of the <code>split</code> column. To do this, we ran a
 
 We then shuffled <code>datacompleteness</code> and found the TVD again, and repeated this 500 times. The distribution of the shuffled test statistics can be seen here, where the red line is the observed value: 
 
-<iframe src="assets/datacomplete.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/datacompleteness.html" width=800 height=600 frameBorder=0></iframe>
 
 As the visualization shows, our p-value was 0 as there is nothing greater than the observed statistic. Because this is less than the significance level of 0.05, we reject the null hypothesis. Because we are using a permutation test to judge missingness, the null hypthosis is that the missingness of <code>split</code> does not depend on <code>datacompleteness</code>, and our alternative is that <code>split</code> does depend on <code>datacompleteness</code>. We therefore say that <code>split</code> does depend on <code>datacompleteness</code>, and <code>split</code> is missing at random(MAR).
 
