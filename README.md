@@ -17,9 +17,6 @@ In order to clean the data, we took these following steps:
 2. Filter by relevant leagues: In our analysis, we were mainly only intereseted in major leagues, that being the LCK, LEC, LPL, and LCS. Therefore, any games that were not played in those major regions were filtered out and removed from our dataset. 
 3. Select relevent columns: After filtering out our data, we only need the columns that are relevant to our query. Therefore, only 'result' and 'champion' are required. 
 Our table is as follows: 
-```py
-print(lol[['champion', 'result']].head().to_markdown(index=False))
-```
 
 | champion   |   result |
 |:-----------|---------:|
@@ -42,9 +39,6 @@ The scatterplot above visualizes the relationship between the "champion" and "wi
 
 ### Interesting Aggregates
 
-```py
-print(winrates.head().to_markdown(index=False))
-```
 
 | champion   |   result |   Number of Games |   winrate |
 |:-----------|---------:|------------------:|----------:|
