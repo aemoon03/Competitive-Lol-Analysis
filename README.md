@@ -24,6 +24,7 @@ lol = league.copy()
 filtered = lol['champion'].notna()
 major = lol['league'].apply(lambda x: x == 'LCK' or x == 'LPL' or x== 'LCS' or x == 'LEC')
 lol = lol[filtered & major]
+
 print(lol[['champion', 'result']].head().to_markdown(index=False))
 ```
 ### Univariate Analysis
@@ -40,6 +41,7 @@ winrates = lol.copy()
 winrates['Number of Games'] = 1 
 winrates = winrates.groupby('champion').sum() 
 winrates['winrate'] = winrates['result'] / winrates['Number of Games'] 
+ 
 print(winrates.head().to_markdown(index=False))
 ```
 Our winrate column is aggregated with the champion, in order to find the amount of games played. This is significant, as our hypothesis question relates to winrates, so we must group by champion in order to find their individual total games played, as well as the total games won in order to calculate the winrate. 
