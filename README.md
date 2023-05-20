@@ -20,6 +20,13 @@ Our table is as follows:
 ```py
 print(lol[['champion', 'result']].head().to_markdown(index=False))
 ```
+| champion   |   result |
+|:-----------|---------:|
+| Gwen       |        1 |
+| Jarvan IV  |        1 |
+| Syndra     |        1 |
+| Jinx       |        1 |
+| Nautilus   |        1 |
 ### Univariate Analysis
 <iframe src="assets/univariate.html" width=800 height=600 frameBorder=0></iframe>
 The histogram plot displays the frequency distribution of champions in the dataset, showing the popularity of each champion in competitive matches. It reveals that certain champions are more popular than others, indicating that they are played more frequently. However, no specific trends or patterns are apparent from the histogram, suggesting that champion popularity does not follow a distinct pattern in this dataset.
@@ -32,6 +39,13 @@ The scatterplot above visualizes the relationship between the "champion" and "wi
 ```py
 print(winrates.head().to_markdown(index=False))
 ```
+| champion   |   result |   Number of Games |   winrate |
+|:-----------|---------:|------------------:|----------:|
+| Aatrox     |       52 |               120 |  0.433333 |
+| Ahri       |      234 |               461 |  0.507592 |
+| Akali      |       97 |               197 |  0.492386 |
+| Akshan     |        9 |                18 |  0.5      |
+| Alistar    |       56 |               124 |  0.451613 |
 
 Our winrate column is aggregated with the champion, in order to find the amount of games played. This is significant, as our hypothesis question relates to winrates, so we must group by champion in order to find their individual total games played, as well as the total games won in order to calculate the winrate. 
 
